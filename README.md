@@ -66,7 +66,7 @@ This project demonstrates the integration of Snowflake with Azure Data Lake Stor
 
 #### 4\. Create External Stage
 
--   Execute the SQL script: [External_Stage_Creation.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute the SQL script: [External_Stage_Creation.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/External_Stage_Creation_edited.sql).
     -   Explanation: This script sets up an external stage in Snowflake to connect with ADLS. It specifies the storage integration and URL to the ADLS container, enabling Snowflake to access data stored in Azure.
     -   Important Note: Now, the stage cannot be created before the database is created. This stage will be created in the next chapter where we establish our first bronze layer database.
 
@@ -74,59 +74,59 @@ This project demonstrates the integration of Snowflake with Azure Data Lake Stor
 
 #### 1\. Create Database and Schema
 
--   Execute: [Create_DB_Bronze_Schema.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Create_DB_Bronze_Schema.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Create_DB_Bronze_Schema.sql).
     -   Explanation: This script creates the initial database and schema in Snowflake where raw data will be stored. The bronze schema is used for storing unprocessed data directly from the source.
 
 #### 2\. Load Data into Bronze Layer
 
 -   Execute the following scripts to load data:
-    -   [Customer_Load.sql](https://titangpt.fullerton.edu/chat/link-to-file)
+    -   [Customer_Load.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Customer_Load.sql)
         -   Explanation: Loads customer data from ADLS into Snowflake's bronze layer, using the CSV format to import data efficiently.
-    -   [Product_Load.sql](https://titangpt.fullerton.edu/chat/link-to-file)
+    -   [Product_Load.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Product_load.sql)
         -   Explanation: Loads product data from ADLS, which is stored in JSON format, into the bronze layer, allowing for structured data processing.
-    -   [Orders_Load.sql](https://titangpt.fullerton.edu/chat/link-to-file)
+    -   [Orders_Load.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Orders_load.sql)
         -   Explanation: Imports transaction data stored in Parquet format into the bronze layer, ensuring efficient handling of large datasets.
 
 #### 3\. Stream Creation
 
--   Execute: [Stream_Creation.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Stream_Creation.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Stream_Creation.sql).
     -   Explanation: Creates streams in Snowflake to capture changes in the bronze tables. This allows for incremental data loading and ensures that updates are tracked effectively.
 
 ### Step 4: Data Transformation Procedures
 
 #### 1\. Transform Customer Data
 
--   Execute: [Customer_Transform.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Customer_Transform.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Customer_Transform.sql).
     -   Explanation: Applies transformations to clean and standardize customer data, including email validation, age verification, and customer type standardization.
 
 #### 2\. Transform Product Data
 
--   Execute: [Product_Transform.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Product_Transform.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Product_Transform.sql).
     -   Explanation: Processes product data by validating prices and stock quantities, ensuring no negative values, and standardizing product ratings.
 
 #### 3\. Transform Orders Data
 
--   Execute: [Orders_Transform.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Orders_Transform.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Orders_Transform.sql).
     -   Explanation: Filters order data based on transaction validity and ensures only meaningful records are retained for analysis.
 
 ### Step 5: Load Data into Silver Layer
 
--   Execute: [Silver_Data_Load.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Silver_Data_Load.sql]([https://titangpt.fullerton.edu/chat/link-to-file](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Silver_Data_Load.sql)).
     -   Explanation: Transfers transformed data into the silver layer, where cleaned and standardized datasets are stored for further analysis.
 
 ### Step 6: Create Gold Layer
 
 #### 1\. Create Gold Layer Schema
 
--   Execute: [Gold_layer.sql](https://titangpt.fullerton.edu/chat/link-to-file).
+-   Execute: [Gold_layer.sql]([https://titangpt.fullerton.edu/chat/link-to-file](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Gold_layer.sql)).
     -   Explanation: Establishes the schema for the gold layer, which is designed for high-level analytics and reporting.
 
 #### 2\. Create Gold Layer Views
 
 -   Execute:
-    -   [GoldLayer_View1.sql](https://titangpt.fullerton.edu/chat/link-to-file)
+    -   [GoldLayer_View1.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/GoldLayer_view1.sql)
         -   Explanation: Creates a view for analyzing daily sales data, combining customer, product, and order information for comprehensive insights.
-    -   [GoldLayer_View2.sql](https://titangpt.fullerton.edu/chat/link-to-file)
+    -   [GoldLayer_View2.sql]([https://titangpt.fullerton.edu/chat/link-to-file](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Goladlayer_View2.sql))
         -   Explanation: Develops a customer affinity view to understand purchasing behaviors and product preferences.
 
 ### Step 7: Data Files
