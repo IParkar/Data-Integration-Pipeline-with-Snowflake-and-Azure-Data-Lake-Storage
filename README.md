@@ -68,7 +68,7 @@ This project demonstrates the integration of Snowflake with Azure Data Lake Stor
 
 -   Execute the SQL script: [External_Stage_Creation.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/External_Stage_Creation_edited.sql).
     -   Explanation: This script sets up an external stage in Snowflake to connect with ADLS. It specifies the storage integration and URL to the ADLS container, enabling Snowflake to access data stored in Azure.
-    -   Important Note: Now, the stage cannot be created before the database is created. This stage will be created in the next chapter where we establish our first bronze layer database.
+    -   Important Note: Now, the stage cannot be created before the database is created. This stage will be created in the next step where we establish our first bronze layer database.
 
 ### Step 3: SQL Code Execution
 
@@ -111,14 +111,14 @@ This project demonstrates the integration of Snowflake with Azure Data Lake Stor
 
 ### Step 5: Load Data into Silver Layer
 
--   Execute: [Silver_Data_Load.sql]([https://titangpt.fullerton.edu/chat/link-to-file](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Silver_Data_Load.sql)).
+-   Execute: [Silver_Data_Load.sql]((https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Silver_Data_Load.sql)).
     -   Explanation: Transfers transformed data into the silver layer, where cleaned and standardized datasets are stored for further analysis.
 
 ### Step 6: Create Gold Layer
 
 #### 1\. Create Gold Layer Schema
 
--   Execute: [Gold_layer.sql]([https://titangpt.fullerton.edu/chat/link-to-file](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Gold_layer.sql)).
+-   Execute: [Gold_layer.sql]((https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Gold_layer.sql)).
     -   Explanation: Establishes the schema for the gold layer, which is designed for high-level analytics and reporting.
 
 #### 2\. Create Gold Layer Views
@@ -126,7 +126,7 @@ This project demonstrates the integration of Snowflake with Azure Data Lake Stor
 -   Execute:
     -   [GoldLayer_View1.sql](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/GoldLayer_view1.sql)
         -   Explanation: Creates a view for analyzing daily sales data, combining customer, product, and order information for comprehensive insights.
-    -   [GoldLayer_View2.sql]([https://titangpt.fullerton.edu/chat/link-to-file](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Goladlayer_View2.sql))
+    -   [GoldLayer_View2.sql]((https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Goladlayer_View2.sql))
         -   Explanation: Develops a customer affinity view to understand purchasing behaviors and product preferences.
 
 ### Step 7: Data Files
