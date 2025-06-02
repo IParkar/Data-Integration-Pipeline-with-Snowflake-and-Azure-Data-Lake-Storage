@@ -61,8 +61,8 @@ This project demonstrates the integration of Snowflake with Azure Data Lake Stor
 -   Multi-Tenant App Name: Copy the name of the Azure Multi-Tenant App (before the underscore).
 -   Navigate to your storage account in the Azure portal.
 -   Select "Access Control (IAM)".
--   Click "Add role assignment" and choose "Storage Blob Data Contributor".
--   Assign this role to the Snowflake application by pasting the application name.
+-   Click "Add role assignment" and choose "Storage Blob Data Contributor". ![Add role](https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/Add_Role.png)
+-   Assign this role to the Snowflake application by pasting the application name. ![Assign Role] (https://github.com/IParkar/Data-Integration-Pipeline-with-Snowflake-and-Azure-Data-Lake-Storage/blob/main/role_assignment1.png)
 
 #### 4\. Create External Stage
 
